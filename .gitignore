@@ -1,0 +1,74 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Tests y coverage
+coverage/
+*.lcov
+
+# Builds y distros
+dist/
+build/
+out/
+.tmp/
+.temp/
+.cache/
+.next/
+.vercel/
+.vite/
+.svelte-kit/
+.snowpack/
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+#  Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+#  Herramientas y configs
+*.log
+*.tgz
+*.gz
+*.zip
+*.bak
+*.swp
+*.tmp
+*.orig
+
+#  Git y control
+.git/
+.gitignore
+.gitattributes
+
+# Otros
+*.sqlite
+*.db
+*.pem
+*.key
+*.crt
+*.p12
+*.cer
+*.lock
+*.pid
+*.seed
+*.dump
+*.log
+*.sock
+*.csv
+*.tsbuildinfo
