@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Tipos de Datos en JavaScript</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Tipos de Datos en JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+    h1 { color: #333; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 10px; }
+    .tipo { font-weight: bold; color: #0077cc; }
+    .valor { font-style: italic; color: #444; }
+    button { margin-top: 20px; padding: 10px; background: #0077cc; color: white; border: none; cursor: pointer; }
+    button:hover { background: #005fa3; }
+    #resultado { margin-top: 20px; background: #fff; padding: 10px; border: 1px solid #ccc; }
+  </style>
 </head>
 <body>
-    <h1>Tipos de Datos en JavaScript</h1>
-    <ul>
-        <li>String</li>
-        <li>Number</li>
-        <li>Boolean</li>
-        <li>Undefined</li>
-        <li>Null</li>
-        <li>Object</li>
-        <li>Symbol</li>
-        <li>BigInt</li>
-    </ul>
+  <h1>Tipos de Datos en JavaScript</h1>
+  <ul id="listaTipos">
+  
+  </ul>
 
-    <script>
-        let miVariable;
-        miVariable = "Hola Mundo";
+  <button onclick="mostrarTipos()">Mostrar ejemplos</button>
+  <div id="resultado"></div>
 
-        let variableEntero;
-        variableEntero = 22;
+  <script>
+    function mostrarTipos() {
+      const tipos = [
+        { tipo: "String", valor: "Hola Mundo" },
+        { tipo: "Number", valor: 42 },
+        { tipo: "Boolean", valor: true },
+        { tipo: "Undefined", valor: undefined },
+        { tipo: "Null", valor: null },
+        { tipo: "Object", valor: { nombre: "Daniel", edad: 25 } },
+        { tipo: "Symbol", valor: Symbol("id") },
+        { tipo: "BigInt", valor: BigInt(9007199254740991) }
+      ];
 
-        
+      const lista = document.getElementById("listaTipos");
+      lista.innerHTML = "";
+      tipos.forEach(dato => {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="tipo">${dato.tipo}:</span> <span class="valor">${String(dato.valor)}</span>`;
+        lista.appendChild(li);
+      });
 
-    </script>
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = "<strong>typeof</strong> de cada tipo:<br><br>";
+      tipos.forEach(dato => {
+        resultado.innerHTML += `<code>${dato.tipo}</code>: <code>${typeof dato.valor}</code><br>`;
+      });
+    }
+  </script>
 </body>
 </html>
