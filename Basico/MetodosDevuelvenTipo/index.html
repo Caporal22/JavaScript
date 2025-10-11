@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Métodos y Tipos en JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      padding: 30px;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .method-list {
+      list-style: none;
+      padding: 0;
+    }
+    .method-list li {
+      margin-bottom: 12px;
+    }
+    .method {
+      font-weight: bold;
+      color: #2980b9;
+    }
+    .result {
+      font-style: italic;
+      color: #555;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1f6391;
+    }
+    #output {
+      margin-top: 25px;
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    code {
+      background: #ecf0f1;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Métodos que Devuelven Tipos en JavaScript</h1>
+  <ul class="method-list" id="methodList"></ul>
+
+  <button onclick="mostrarResultados()">Ejecutar Métodos</button>
+  <div id="output"></div>
+
+  <script>
+    function mostrarResultados() {
+      const metodos = [
+        { nombre: "toString()", resultado: (123).toString() },
+        { nombre: "parseInt()", resultado: parseInt("42") },
+        { nombre: "parseFloat()", resultado: parseFloat("3.14") },
+        { nombre: "Array.isArray()", resultado: Array.isArray([1, 2, 3]) },
+        { nombre: "JSON.stringify()", resultado: JSON.stringify({ nombre: "Daniel" }) },
+        { nombre: "Date.now()", resultado: Date.now() },
+        { nombre: "Boolean()", resultado: Boolean(0) },
+        { nombre: "typeof", resultado: typeof Symbol("id") }
+      ];
+
+      const lista = document.getElementById("methodList");
+      lista.innerHTML = "";
+      metodos.forEach(metodo => {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="method">${metodo.nombre}:</span> <span class="result">${metodo.resultado}</span>`;
+        lista.appendChild(li);
+      });
+
+      const output = document.getElementById("output");
+      output.innerHTML = "<strong>Tipo devuelto por cada método:</strong><br><br>";
+      metodos.forEach(metodo => {
+        output.innerHTML += `<code>${metodo.nombre}</code> → <code>${typeof metodo.resultado}</code><br>`;
+      });
+    }
+  </script>
+</body>
+</html>
